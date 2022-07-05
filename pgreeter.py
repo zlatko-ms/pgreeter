@@ -7,7 +7,7 @@ import logging
 
 logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO)
 greetUrl = os.getenv('GREET_URL','http://www.bing.com')
-greetSleep = int(os.getenv('GREET_SLEEP','5'))
+greetSleep = float(os.getenv('GREET_SLEEP','5'))
 logging.info("greeter starting with url="+greetUrl+" sleep="+str(greetSleep))
 
 while ( 1 == 1 ): 
