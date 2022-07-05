@@ -17,7 +17,7 @@ PGreeter being quite trivial, it exposes only the following configuration parame
 | Env Var Name    | Default Value       | Purpose                                            |
 |-----------------|---------------------|----------------------------------------------------|
 | GREET_URL       | http://www.bing.com | Url to HTTP GET                                    |
-| GREET_SLEEP     | 5                   | Delay in seconds between two HTTP GET operations   |
+| GREET_SLEEP     | 5                   | Delay in seconds between two HTTP GET operations, use float values (i.e 0.5) to go below the second   |
 
 ## Docker Image
 
