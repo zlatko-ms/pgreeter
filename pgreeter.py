@@ -7,8 +7,14 @@ import logging
 
 logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO)
 greetUrl = os.getenv('GREET_URL','http://www.bing.com')
-greetSleep = float(os.getenv('GREET_SLEEP','5'))
-logging.info("greeter starting with url="+greetUrl+" sleep="+str(greetSleep))
+greetRPS = int(os.getenv('GREET_RPS','1'))
+
+if (greetRPS>1000 or greetRPS < 1): 
+    logging.error("GREET_RPS value must be in range [1...1000]")
+    os._exit(255)
+
+greetSleep = float( 1 / greetRPS)
+logging.info("greeter starting with url="+greetUrl+" rps="+str(greetRPS))
 
 while ( 1 == 1 ): 
     logging.info("greeter is awake")
